@@ -1,11 +1,19 @@
 import React from 'react';
 
 class NumbersGame extends React.Component {
-  state = {
-    numbers: [],
-    target: [],
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      numbers: [],
+      target: [],
+    };
 
+    this.baseState = this.state;
+  }
+
+  resetNumbersGame = () => {
+    this.setState(this.baseState);
+  };
   randomOneToTen = () => {
     const smallNumber = Math.floor(Math.random() * 10) + 1;
     this.setState((currentState) => {
@@ -59,6 +67,9 @@ class NumbersGame extends React.Component {
           disabled={this.state.target.length >= 1}
         >
           Target Number
+        </button>
+        <button id="numberButton" onClick={this.resetNumbersGame}>
+          Reset Numbers Game
         </button>
         <table id="NumbersTarget">
           <tr>
