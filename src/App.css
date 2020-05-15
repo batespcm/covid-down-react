@@ -23,6 +23,32 @@ h1 {
   bottom: 0px;
 }
 
+#NumbersTarget {
+  font-family: 'ds-digitalnormal';
+  font-weight: bold;
+  font-size: 95px;
+  letter-spacing: 1px;
+  color: yellowgreen;
+  text-align: center;
+  background-color: black;
+  position: fixed;
+  right: 43%;
+  bottom: 250px;
+}
+
+#NumbersTable {
+  font-family: 'futuracondensed_bold';
+  font-weight: bold;
+  font-size: 75px;
+  letter-spacing: 1px;
+  color: white;
+  text-align: center;
+  background-color: darkblue;
+  position: fixed;
+  right: 36%;
+  bottom: 140px;
+}
+
 table,
 th,
 td {
