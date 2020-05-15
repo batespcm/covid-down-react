@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import Header from './components/Header';
 import LettersGame from './components/LettersGame';
+// import NumbersGame from './components/NumbersGame';
 
 class App extends React.Component {
   render() {
@@ -9,6 +10,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <Header />
+
         <LettersGame />
 
         {

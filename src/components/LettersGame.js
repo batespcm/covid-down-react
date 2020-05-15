@@ -6,7 +6,7 @@ class LettersGame extends React.Component {
   };
 
   getVowel = () => {
-    const randomVowel = 'aaaaaaaaaaaaaaaeeeeeeeeeeeeeeeeeeeeeiiiiiiiiiiiiiooooooooooooouuuuu'.split(
+    const randomVowel = 'eeoeaaooeauiiaeieeooeoeeioaoouaeaaaieieoeieeiuaiaiaieueeueaaoaoieio'.split(
       ''
     )[Math.floor(Math.random() * 67)];
     const uppercaseVowel = randomVowel.toUpperCase();
@@ -18,7 +18,7 @@ class LettersGame extends React.Component {
   };
 
   getConsonant = () => {
-    const randomConsonant = 'bbcccddddddffggghhjklllllmmmmnnnnnnnnppppqrrrrrrrrrssssssssstttttttttvwxyz'.split(
+    const randomConsonant = 'tnnftdklcmnzdnntthtrcdwgpssbvtrlplgprmrxtrrldsjmndsrrtmssnpcssbtfslndghqyr'.split(
       ''
     )[Math.floor(Math.random() * 74)];
     const uppercaseConsonant = randomConsonant.toUpperCase();
@@ -43,7 +43,7 @@ class LettersGame extends React.Component {
         <button
           id="vowelButton"
           onClick={this.getVowel}
-          disabled={this.state.letters.length > 9}
+          disabled={this.state.letters.length >= 9}
         >
           Vowel
         </button>
