@@ -12,7 +12,6 @@ class App extends React.Component {
         <Header />
         <NumbersGame />
         <LettersGame />
-
         {
           //add the first button
           //add the second button
