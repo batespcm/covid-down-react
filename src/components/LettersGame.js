@@ -1,8 +1,16 @@
 import React from 'react';
 
 class LettersGame extends React.Component {
-  state = {
-    letters: [],
+  constructor(props) {
+    super(props);
+    this.state = {
+      letters: [],
+    };
+    this.baseState = this.state;
+  }
+
+  resetLettersGame = () => {
+    this.setState(this.baseState);
   };
 
   getVowel = () => {
@@ -34,18 +42,21 @@ class LettersGame extends React.Component {
     return (
       <main>
         <button
-          id="consonantButton"
+          id="lettersButton"
           onClick={this.getConsonant}
           disabled={this.state.letters.length >= 9}
         >
           Consonant
         </button>
         <button
-          id="vowelButton"
+          id="lettersButton"
           onClick={this.getVowel}
           disabled={this.state.letters.length >= 9}
         >
           Vowel
+        </button>
+        <button id="lettersButton" onClick={this.resetLettersGame}>
+          Reset Letters Game
         </button>
         <table id="LettersTable">
           <tr>
