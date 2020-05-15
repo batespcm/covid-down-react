@@ -10,6 +10,25 @@ h1 {
   background-color: darkblue;
 }
 
+#LettersTable {
+  font-family: 'futuracondensed_bold';
+  font-weight: bold;
+  font-size: 95px;
+  letter-spacing: 1px;
+  color: white;
+  text-align: center;
+  background-color: darkblue;
+  position: fixed;
+  right: 30%;
+  bottom: 0px;
+}
+
+table,
+th,
+td {
+  border: 1px solid lightblue;
+}
+
 @font-face {
   font-family: 'futuracondensed_bold';
   src: url('fonts/futura_condensed_bold-webfont.woff') format('woff2'),
