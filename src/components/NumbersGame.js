@@ -12,6 +12,7 @@ class NumbersGame extends React.Component {
   }
 
   resetNumbersGame = () => {
+    //resets the numbers game
     this.setState(this.baseState);
   };
   randomOneToTen = () => {
@@ -34,7 +35,7 @@ class NumbersGame extends React.Component {
   };
 
   numbersTarget = () => {
-    let min = 200;
+    let min = 300;
     let max = 999;
     const tripleDigitTarget = Math.floor(Math.random() * (max - min)) + min;
     this.setState((currentState) => {
@@ -48,27 +49,29 @@ class NumbersGame extends React.Component {
     return (
       <main>
         <button
-          id="numberButton"
+          id="NumbersButton"
           onClick={this.randomOneToTen}
           disabled={this.state.numbers.length >= 6}
         >
           Small Number
         </button>
         <button
-          id="numberButton"
+          id="NumbersButton"
           onClick={this.bigNumber}
           disabled={this.state.numbers.length >= 6}
         >
           Big Number
         </button>
         <button
-          id="numberButton"
+          id="NumbersButton"
           onClick={this.numbersTarget}
-          disabled={this.state.target.length >= 1}
+          disabled={
+            this.state.target.length >= 1 || this.state.numbers.length < 6
+          }
         >
           Target Number
         </button>
-        <button id="numberButton" onClick={this.resetNumbersGame}>
+        <button id="NumbersButton" onClick={this.resetNumbersGame}>
           Reset Numbers Game
         </button>
         <table id="NumbersTarget">

@@ -10,6 +10,7 @@ class LettersGame extends React.Component {
   }
 
   resetLettersGame = () => {
+    //resets the letters grid
     this.setState(this.baseState);
   };
 
@@ -42,20 +43,20 @@ class LettersGame extends React.Component {
     return (
       <main>
         <button
-          id="lettersButton"
+          id="LettersButton"
           onClick={this.getConsonant}
           disabled={this.state.letters.length >= 9}
         >
           Consonant
         </button>
         <button
-          id="lettersButton"
+          id="LettersButton"
           onClick={this.getVowel}
           disabled={this.state.letters.length >= 9}
         >
           Vowel
         </button>
-        <button id="lettersButton" onClick={this.resetLettersGame}>
+        <button id="LettersButton" onClick={this.resetLettersGame}>
           Reset Letters Game
         </button>
         <table id="LettersTable">
