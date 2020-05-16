@@ -6,6 +6,7 @@
 /.pnp
 .pnp.js
 checklist.md
+node_modules
 
 # testing
 /coverage
