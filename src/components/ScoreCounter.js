@@ -10,11 +10,15 @@ class ScoreCounter extends React.Component {
     this.baseState = this.state;
   }
 
+  // how to create a function that will autopopulate how many players based on user input
+
   resetScore = () => {
+    //rests the score count
     this.setState(this.baseState);
   };
 
   playerOneScore = () => {
+    // some code required in here to take a form value and add that number to existing number playerOne[0]
     this.setState((currentState) => {
       return {
         playerOne: [...currentState.playerOne],
@@ -23,6 +27,7 @@ class ScoreCounter extends React.Component {
   };
 
   playerTwoScore = () => {
+    // some code required in here to take a form value and add that number to existing number playerTwo[0]
     this.setState((currentState) => {
       return {
         playerTwo: [...currentState.playerTwo],
