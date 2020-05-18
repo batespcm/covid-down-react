@@ -1,19 +1,18 @@
 import React from 'react';
+import NumbersRoundForm from './NumbersRoundForm';
 
 class NumbersGame extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      numbers: [],
-      target: [],
-    };
-
-    this.baseState = this.state;
-  }
+  state = {
+    numbers: [],
+    target: [],
+  };
 
   resetNumbersGame = () => {
     //resets the numbers game
-    this.setState(this.baseState);
+    this.setState({
+      numbers: [],
+      target: [],
+    });
   };
   randomOneToTen = () => {
     const smallNumber = Math.floor(Math.random() * 10) + 1;
@@ -74,6 +73,7 @@ class NumbersGame extends React.Component {
         <button id="NumbersButton" onClick={this.resetNumbersGame}>
           Reset Numbers Game
         </button>
+        {<NumbersRoundForm />}
         <table id="NumbersTarget">
           <tr>
             {this.state.target.map((goal) => {

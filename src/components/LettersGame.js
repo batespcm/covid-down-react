@@ -1,17 +1,16 @@
 import React from 'react';
+import LettersScoreForm from './LettersScoreForm';
 
 class LettersGame extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      letters: [],
-    };
-    this.baseState = this.state;
-  }
+  state = {
+    letters: [],
+  };
 
   resetLettersGame = () => {
     //resets the letters grid
-    this.setState(this.baseState);
+    this.setState({
+      letters: [],
+    });
   };
 
   getVowel = () => {
@@ -59,6 +58,12 @@ class LettersGame extends React.Component {
         <button id="LettersButton" onClick={this.resetLettersGame}>
           Reset Letters Game
         </button>
+
+        {
+          <LettersScoreForm
+            incrementPlayerScore={this.props.incrementPlayerScore}
+          />
+        }
         <table id="LettersTable">
           <tr>
             {this.state.letters.map((letter) => {
