@@ -4,6 +4,7 @@ import Header from './components/Header';
 import LettersGame from './components/LettersGame';
 import NumbersGame from './components/NumbersGame';
 import TotalScoreCounter from './components/TotalScoreCounter';
+import Footer from './components/Footer';
 
 class App extends React.Component {
   // keep score
@@ -36,8 +37,9 @@ class App extends React.Component {
           playerOne={this.state.playerOne}
           playerTwo={this.state.playerTwo}
         />
-        <NumbersGame />
+        {/* {<NumbersGame incrementPlayerScore={this.incrementPlayerScore}} /> */}
         <LettersGame incrementPlayerScore={this.incrementPlayerScore} />
+        <Footer />
         {
           //add the first button
           //add the second button

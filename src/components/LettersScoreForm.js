@@ -24,26 +24,27 @@ class LettersScoreForm extends React.Component {
 
   handleWord = (event) => {
     const { name, value } = event.target;
+    console.log(name, value);
     this.setState({ [name]: value });
     //  const wordlength = event.target.value.length;
   };
 
-  // handleWordPlayerTwo = (event) => {
-  //   const { playerTwoWord, value } = event.target;
-  //   this.setState({ [playerTwoWord]: value });
-  // };
-
-  // method which updates state with the input of the user  - onChange
-  // onSubmit on the form - figure out which is the logest word and increase score in App.
   render() {
     return (
       <form onSubmit={this.handleSubmit}>
         <label>Player One Word</label>
-        <input name="playerOneWord" onChange={this.handleWord} />
+        <input
+          name="playerOneWord"
+          onChange={this.handleWord}
+          placeholder="P1 Word"
+        />
         <label>Player Two Word</label>
-        <input name="playerTwoWord" onChange={this.handleWord} />
-        <button> Submit Words</button>
-        {/* label, input field, button */}
+        <input
+          name="playerTwoWord"
+          onChange={this.handleWord}
+          placeholder="P2 Word"
+        />
+        <button value="reset"> Submit Words</button>
       </form>
     );
   }

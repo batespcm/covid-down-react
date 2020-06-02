@@ -33,7 +33,7 @@ class NumbersGame extends React.Component {
     });
   };
 
-  numbersTarget = () => {
+  numbersGoal = () => {
     let min = 300;
     let max = 999;
     const tripleDigitTarget = Math.floor(Math.random() * (max - min)) + min;
@@ -63,7 +63,7 @@ class NumbersGame extends React.Component {
         </button>
         <button
           id="NumbersButton"
-          onClick={this.numbersTarget}
+          onClick={this.numbersGoal}
           disabled={
             this.state.target.length >= 1 || this.state.numbers.length < 6
           }
@@ -73,7 +73,12 @@ class NumbersGame extends React.Component {
         <button id="NumbersButton" onClick={this.resetNumbersGame}>
           Reset Numbers Game
         </button>
-        {<NumbersRoundForm />}
+        {
+          <NumbersRoundForm
+            incrementPlayerScore={this.props.incrementPlayerScore}
+            numbersGoal={this.props.numbersGoal}
+          />
+        }
         <table id="NumbersTarget">
           <tr>
             {this.state.target.map((goal) => {
