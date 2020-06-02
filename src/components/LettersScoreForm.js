@@ -1,4 +1,5 @@
 import React from 'react';
+// import * as api from '../utils/api';
 
 class LettersScoreForm extends React.Component {
   state = {
@@ -6,7 +7,7 @@ class LettersScoreForm extends React.Component {
     playerTwoWord: '',
   };
 
-  handleSubmit = (event) => {
+  handleScoreDistribution = (event) => {
     event.preventDefault();
     let player;
     let score;
@@ -22,29 +23,27 @@ class LettersScoreForm extends React.Component {
     this.props.incrementPlayerScore(player, score);
   };
 
-  handleWord = (event) => {
+  addWordToState = (event) => {
     const { name, value } = event.target;
-    console.log(name, value);
     this.setState({ [name]: value });
-    //  const wordlength = event.target.value.length;
   };
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
+      <form onSubmit={this.handleScoreDistribution}>
         <label>Player One Word</label>
         <input
           name="playerOneWord"
-          onChange={this.handleWord}
+          onChange={this.addWordToState}
           placeholder="P1 Word"
         />
         <label>Player Two Word</label>
         <input
           name="playerTwoWord"
-          onChange={this.handleWord}
+          onChange={this.addWordToState}
           placeholder="P2 Word"
         />
-        <button value="reset"> Submit Words</button>
+        <button> Submit Words</button>
       </form>
     );
   }
