@@ -30,7 +30,6 @@ class LettersGame extends React.Component {
       ''
     )[Math.floor(Math.random() * 74)];
     const uppercaseConsonant = randomConsonant.toUpperCase();
-    // call back to set state is always invoked with currentState and must return new object to become the new state
     this.setState((currentState) => {
       return {
         letters: [...currentState.letters, uppercaseConsonant],
@@ -65,11 +64,13 @@ class LettersGame extends React.Component {
           />
         }
         <table id="LettersTable">
-          <tr>
-            {this.state.letters.map((letter) => {
-              return <td>{letter}</td>;
-            })}
-          </tr>
+          <thead>
+            <tr>
+              {this.state.letters.map((letter) => {
+                return <td>{letter}</td>;
+              })}
+            </tr>
+          </thead>
         </table>
       </main>
     );

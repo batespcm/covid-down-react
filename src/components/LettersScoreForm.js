@@ -25,6 +25,7 @@ class LettersScoreForm extends React.Component {
 
   addWordToState = (event) => {
     const { name, value } = event.target;
+    // Here we will check if word(value) is a word and then add to state using OD api
     this.setState({ [name]: value });
   };
 
