@@ -2,12 +2,11 @@ import React from 'react';
 import './App.css';
 import Header from './components/Header';
 import LettersGame from './components/LettersGame';
-import NumbersGame from './components/NumbersGame';
+// import NumbersGame from './components/NumbersGame';
 import TotalScoreCounter from './components/TotalScoreCounter';
 import Footer from './components/Footer';
 
 class App extends React.Component {
-  // keep score
   state = {
     playerOne: 0,
     playerTwo: 0,
@@ -18,8 +17,6 @@ class App extends React.Component {
   };
 
   incrementPlayerScore = (player, score) => {
-    console.log(player, score, 'playerScore console.log'); // undefined
-    // some code required in here to take a form value and add that number to existing number playerOne[0]
     this.setState((currentState) => {
       return {
         [player]: currentState[player] + score,
@@ -31,7 +28,6 @@ class App extends React.Component {
     return (
       <div className="App">
         <Header />
-        {/* display score in the score counter */}
         <TotalScoreCounter
           resetScore={this.resetScore}
           playerOne={this.state.playerOne}
