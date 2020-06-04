@@ -47,7 +47,7 @@ class LettersGame extends React.Component {
 
   render() {
     const { clockStart } = this.state;
-    if (clockStart) return <CountDownClock />;
+    if (clockStart) return <CountDownClock letters={this.state.letters} />;
     return (
       <main>
         <button
