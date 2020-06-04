@@ -21,6 +21,12 @@ class LettersGame extends React.Component {
     });
   };
 
+  stopTheClock = () => {
+    this.setState({
+      clockStart: false,
+    });
+  };
+
   getVowel = () => {
     const randomVowel = 'eeoeaaooeauiiaeieeooeoeeioaoouaeaaaieieoeieeiuaiaiaieueeueaaoaoieio'.split(
       ''
@@ -66,6 +72,9 @@ class LettersGame extends React.Component {
         </button>
         <button id="ClockButton" onClick={this.startTheClock}>
           Start The Clock
+        </button>
+        <button id="ClockButton" onClick={this.stopTheClock}>
+          Hide The Clock
         </button>
         <button id="LettersButton" onClick={this.resetLettersGame}>
           Reset Letters Game

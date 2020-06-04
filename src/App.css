@@ -2,6 +2,12 @@ body {
   background-color: lightblue;
 }
 
+#countdownClock {
+  position: relative;
+  top: -16px;
+  right: -706px;
+}
+
 .footerTable {
   font-family: 'futuracondensed_bold';
   font-weight: bold;
