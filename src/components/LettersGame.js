@@ -1,15 +1,23 @@
 import React from 'react';
 import LettersScoreForm from './LettersScoreForm';
+import CountDownClock from './CountDownClock';
 
 class LettersGame extends React.Component {
   state = {
     letters: [],
+    clockStart: false,
   };
 
   resetLettersGame = () => {
     //resets the letters grid
     this.setState({
       letters: [],
+    });
+  };
+
+  startTheClock = () => {
+    this.setState({
+      clockStart: true,
     });
   };
 
@@ -38,6 +46,8 @@ class LettersGame extends React.Component {
   };
 
   render() {
+    const { clockStart } = this.state;
+    if (clockStart) return <CountDownClock />;
     return (
       <main>
         <button
@@ -53,6 +63,9 @@ class LettersGame extends React.Component {
           disabled={this.state.letters.length >= 9}
         >
           Vowel
+        </button>
+        <button id="ClockButton" onClick={this.startTheClock}>
+          Start The Clock
         </button>
         <button id="LettersButton" onClick={this.resetLettersGame}>
           Reset Letters Game
