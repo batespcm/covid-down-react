@@ -2,7 +2,7 @@ body {
   background-color: lightblue;
 }
 
-#countdownClock {
+.countDownClock {
   position: relative;
   top: -16px;
   right: -706px;
@@ -42,6 +42,12 @@ h1 {
   right: 15%;
   left: 15%;
   bottom: 100px;
+}
+
+#LettersButton {
+  text-align: center;
+  left: 1%;
+  bottom: 120px;
 }
 
 #NumbersTarget {
