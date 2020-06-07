@@ -1,7 +1,21 @@
 import React, { Component } from 'react';
 
-export default class Header extends Component {
+class Header extends Component {
   render() {
-    return <h1>COVIDDOWN</h1>;
+    return (
+      <React.Fragment>
+        <h1>
+          P1:
+          {this.props.playerOne}
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; COVIDDOWN
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; P2:{this.props.playerTwo}{' '}
+        </h1>
+        <button id="ScoreButton" onClick={this.props.resetGame}>
+          Reset Game
+        </button>
+      </React.Fragment>
+    );
   }
 }
+
+export default Header;

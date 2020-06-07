@@ -3,7 +3,6 @@ import './App.css';
 import Header from './components/Header';
 import LettersGame from './components/LettersGame';
 // import NumbersGame from './components/NumbersGame';
-import TotalScoreCounter from './components/TotalScoreCounter';
 import Footer from './components/Footer';
 
 class App extends React.Component {
@@ -12,7 +11,7 @@ class App extends React.Component {
     playerTwo: 0,
   };
 
-  resetScore = () => {
+  resetGame = () => {
     this.setState({ playerOne: 0, playerTwo: 0 });
   };
 
@@ -27,9 +26,8 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <Header />
-        <TotalScoreCounter
-          resetScore={this.resetScore}
+        <Header
+          resetGame={this.resetGame}
           playerOne={this.state.playerOne}
           playerTwo={this.state.playerTwo}
         />
