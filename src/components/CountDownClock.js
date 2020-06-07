@@ -11,8 +11,8 @@ class CountDownClock extends Component {
           className="countDownClock"
           url="media/covid-down-clock.mp4"
           playing="true"
-          width="50%"
-          height="50%"
+          width={250}
+          height={360}
         />
         <table id="LettersTable">
           <thead>

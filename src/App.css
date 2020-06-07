@@ -4,8 +4,9 @@ body {
 
 .countDownClock {
   position: relative;
-  top: -16px;
-  right: -706px;
+  right: 40%;
+  left: 40%;
+  bottom: 100px;
 }
 
 .footerTable {
