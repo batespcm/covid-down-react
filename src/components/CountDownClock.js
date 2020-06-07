@@ -9,8 +9,10 @@ class CountDownClock extends Component {
       <React.Fragment>
         <ReactPlayer
           className="countDownClock"
-          url="https://www.youtube.com/watch?v=2JVwo3D72cc"
+          url="media/covid-down-clock.mp4"
           playing="true"
+          width="50%"
+          height="50%"
         />
         <table id="LettersTable">
           <thead>
