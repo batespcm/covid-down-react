@@ -3,6 +3,8 @@ import ReactPlayer from 'react-player';
 
 class CountDownClock extends Component {
   render() {
+    const { clockStart } = this.props;
+    if (clockStart === false) return <ReactPlayer />;
     return (
       <React.Fragment>
         <ReactPlayer

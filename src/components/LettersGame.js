@@ -52,49 +52,53 @@ class LettersGame extends React.Component {
   };
 
   render() {
-    const { clockStart } = this.state;
-    if (clockStart) return <CountDownClock letters={this.state.letters} />;
     return (
-      <main>
-        <button
-          id="LettersButton"
-          onClick={this.getConsonant}
-          disabled={this.state.letters.length >= 9}
-        >
-          Consonant
-        </button>
-        <button
-          id="LettersButton"
-          onClick={this.getVowel}
-          disabled={this.state.letters.length >= 9}
-        >
-          Vowel
-        </button>
-        <button id="ClockButton" onClick={this.startTheClock}>
-          Start The Clock
-        </button>
-        <button id="ClockButton" onClick={this.stopTheClock}>
-          Hide The Clock
-        </button>
-        <button id="LettersButton" onClick={this.resetLettersGame}>
-          Reset Letters Game
-        </button>
+      <React.Fragment>
+        <main>
+          <button
+            id="LettersButton"
+            onClick={this.getConsonant}
+            disabled={this.state.letters.length >= 9}
+          >
+            Consonant
+          </button>
+          <button
+            id="LettersButton"
+            onClick={this.getVowel}
+            disabled={this.state.letters.length >= 9}
+          >
+            Vowel
+          </button>
+          <button id="ClockButton" onClick={this.startTheClock}>
+            Start The Clock
+          </button>
+          <button id="ClockButton" onClick={this.stopTheClock}>
+            Hide The Clock
+          </button>
+          <button id="LettersButton" onClick={this.resetLettersGame}>
+            Reset Letters Game
+          </button>
 
-        {
-          <LettersScoreForm
-            incrementPlayerScore={this.props.incrementPlayerScore}
-          />
-        }
-        <table id="LettersTable">
-          <thead>
-            <tr>
-              {this.state.letters.map((letter) => {
-                return <td>{letter}</td>;
-              })}
-            </tr>
-          </thead>
-        </table>
-      </main>
+          {
+            <LettersScoreForm
+              incrementPlayerScore={this.props.incrementPlayerScore}
+            />
+          }
+          <table id="LettersTable">
+            <thead>
+              <tr>
+                {this.state.letters.map((letter) => {
+                  return <td>{letter}</td>;
+                })}
+              </tr>
+            </thead>
+          </table>
+        </main>
+        <CountDownClock
+          letters={this.state.letters}
+          clockStart={this.state.clockStart}
+        />
+      </React.Fragment>
     );
   }
 }

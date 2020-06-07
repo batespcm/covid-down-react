@@ -50,6 +50,28 @@ h1 {
   bottom: 120px;
 }
 
+table,
+th,
+td {
+  border: 1px solid lightblue;
+}
+
+@font-face {
+  font-family: 'futuracondensed_bold';
+  src: url('fonts/futura_condensed_bold-webfont.woff') format('woff2'),
+    url('fonts/futura_condensed_bold-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'ds-digitalnormal';
+  src: url('/fonts/ds-digi-webfont.woff2') format('woff2'),
+    url('/fonts/ds-digi-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
 #NumbersTarget {
   font-family: 'ds-digitalnormal';
   font-weight: bold;
@@ -76,26 +98,4 @@ h1 {
   position: fixed;
   right: 36%;
   bottom: 140px;
-}
-
-table,
-th,
-td {
-  border: 1px solid lightblue;
-}
-
-@font-face {
-  font-family: 'futuracondensed_bold';
-  src: url('fonts/futura_condensed_bold-webfont.woff') format('woff2'),
-    url('fonts/futura_condensed_bold-webfont.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'ds-digitalnormal';
-  src: url('/fonts/ds-digi-webfont.woff2') format('woff2'),
-    url('/fonts/ds-digi-webfont.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
 }
