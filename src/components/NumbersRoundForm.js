@@ -11,8 +11,8 @@ class NumbersRoundForm extends React.Component {
     const { numbersGoal } = this.props;
     let playerOneTotal = this.state.playerOneTotal;
     let playerTwoTotal = this.state.playerTwoTotal;
-    let min = numbersGoal - 5;
-    let max = numbersGoal + 5;
+    // let min = numbersGoal - 5; // need to get a range going
+    // let max = numbersGoal + 5; // need to get a range going
     let playerOneScore;
     let playerTwoScore;
     if (
@@ -21,18 +21,20 @@ class NumbersRoundForm extends React.Component {
     ) {
       playerOneScore = 10;
       playerTwoScore = 10;
-    } else if (playerOneTotal < max && playerOneTotal >= min) {
-      playerOneScore = 7;
+    } else if (playerOneTotal - numbersGoal === 0) {
+      playerOneScore = 10;
       playerTwoScore = 0;
+    } else if (playerTwoTotal - numbersGoal === 0) {
+      playerOneScore = 0;
+      playerTwoScore = 10;
     }
     this.props.incrementPlayerScore(playerOneScore, playerTwoScore);
   };
 
   handleNumber = (event) => {
     const { name, value } = event.target;
-    let strToNum = parseInt(value, 10);
-    console.log(typeof strToNum);
-    this.setState({ [name]: strToNum });
+    let valueAsInt = parseInt(value, 10);
+    this.setState({ [name]: valueAsInt });
   };
 
   render() {
