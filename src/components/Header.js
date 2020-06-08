@@ -11,14 +11,16 @@ class Header extends Component {
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; COVIDDOWN
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; P2:{this.props.playerTwo}{' '}
         </h1>
-        <Link to="/">
-          <button className="GameButton" onClick={this.props.resetGame}>
-            Reset Game
-          </button>
-        </Link>
+
         <Link to="/numbersgame">
           <button className="GameButton">Numbers Game</button>
         </Link>
+        <Link to="/">
+          <button className="GameButton">Letters Game</button>
+        </Link>
+        <button className="GameButton" onClick={this.props.resetGame}>
+          Reset Game
+        </button>
       </React.Fragment>
     );
   }

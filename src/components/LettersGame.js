@@ -56,26 +56,26 @@ class LettersGame extends React.Component {
       <React.Fragment>
         <main>
           <button
-            id="LettersButton"
+            id="GameButton"
             onClick={this.getConsonant}
             disabled={this.state.letters.length >= 9}
           >
             Consonant
           </button>
           <button
-            id="LettersButton"
+            id="GameButton"
             onClick={this.getVowel}
             disabled={this.state.letters.length >= 9}
           >
             Vowel
           </button>
-          <button id="ClockButton" onClick={this.startTheClock}>
+          <button id="GameButton" onClick={this.startTheClock}>
             Start The Clock
           </button>
-          <button id="ClockButton" onClick={this.stopTheClock}>
+          <button id="GameButton" onClick={this.stopTheClock}>
             Hide The Clock
           </button>
-          <button id="LettersButton" onClick={this.resetLettersGame}>
+          <button id="GameButton" onClick={this.resetLettersGame}>
             Reset Letters Game
           </button>
 

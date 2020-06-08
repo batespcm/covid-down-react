@@ -8,18 +8,31 @@ class NumbersRoundForm extends React.Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-    // do i need component did mount?
-    // this.state.numbersGoal(props); // does this get me the value
-    // if target minus player total is > 1 && < 6 score + 7
-    // if target minus player total === 0 score + 10
-    // if p1 difference is < p2 difference, p1 score + score
-    // if p2 difference is < p1 difference, p2 score + score
-    // how do i get access to this.props.numbersGoal() to compare
+    const { numbersGoal } = this.props;
+    let playerOneTotal = this.state.playerOneTotal;
+    let playerTwoTotal = this.state.playerTwoTotal;
+    let min = numbersGoal - 5;
+    let max = numbersGoal + 5;
+    let playerOneScore;
+    let playerTwoScore;
+    if (
+      playerOneTotal === playerTwoTotal &&
+      numbersGoal - playerOneTotal === 0
+    ) {
+      playerOneScore = 10;
+      playerTwoScore = 10;
+    } else if (playerOneTotal < max && playerOneTotal >= min) {
+      playerOneScore = 7;
+      playerTwoScore = 0;
+    }
+    this.props.incrementPlayerScore(playerOneScore, playerTwoScore);
   };
 
   handleNumber = (event) => {
     const { name, value } = event.target;
-    this.setState({ [name]: value });
+    let strToNum = parseInt(value, 10);
+    console.log(typeof strToNum);
+    this.setState({ [name]: strToNum });
   };
 
   render() {

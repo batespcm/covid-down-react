@@ -40,7 +40,10 @@ class App extends React.Component {
             path="/"
             incrementPlayerScore={this.incrementPlayerScore}
           />
-          <NumbersGame path="/numbersgame" />
+          <NumbersGame
+            path="/numbersgame"
+            incrementPlayerScore={this.incrementPlayerScore}
+          />
         </Router>
         {/* {<NumbersGame incrementPlayerScore={this.incrementPlayerScore}} /> */}
 

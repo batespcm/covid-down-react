@@ -48,21 +48,21 @@ class NumbersGame extends React.Component {
     return (
       <main>
         <button
-          id="NumbersButton"
+          id="GameButton"
           onClick={this.randomOneToTen}
           disabled={this.state.numbers.length >= 6}
         >
           Small Number
         </button>
         <button
-          id="NumbersButton"
+          id="GameButton"
           onClick={this.bigNumber}
           disabled={this.state.numbers.length >= 6}
         >
           Big Number
         </button>
         <button
-          id="NumbersButton"
+          id="GameButton"
           onClick={this.numbersGoal}
           disabled={
             this.state.target.length >= 1 || this.state.numbers.length < 6
@@ -70,13 +70,13 @@ class NumbersGame extends React.Component {
         >
           Target Number
         </button>
-        <button id="NumbersButton" onClick={this.resetNumbersGame}>
+        <button id="GameButton" onClick={this.resetNumbersGame}>
           Reset Numbers Game
         </button>
         {
           <NumbersRoundForm
             incrementPlayerScore={this.props.incrementPlayerScore}
-            numbersGoal={this.props.numbersGoal}
+            numbersGoal={this.state.target}
           />
         }
         <table id="NumbersTarget">
