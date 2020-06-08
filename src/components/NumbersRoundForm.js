@@ -40,19 +40,26 @@ class NumbersRoundForm extends React.Component {
   render() {
     return (
       <form onSubmit={this.handleSubmit}>
-        <label>Player One Total</label>
+        <label>P1 Total</label>
         <input
           name="playerOneTotal"
           onChange={this.handleNumber}
           placeholder="P1 Answer"
+          maxLength="3"
+          type="number"
         />
-        <label>Player Two Total</label>
+        <label>P2 Total</label>
         <input
           name="playerTwoTotal"
           onChange={this.handleNumber}
           placeholder="P2 Answer"
+          maxLength="3"
+          type="number"
         />
-        <button> Submit Total</button>
+        <button disabled={this.props.numbersGoal.length < 1}>
+          {' '}
+          Submit Total
+        </button>
         {/* label, input field, button */}
       </form>
     );

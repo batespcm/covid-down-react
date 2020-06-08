@@ -69,10 +69,18 @@ class LettersGame extends React.Component {
           >
             Vowel
           </button>
-          <button id="GameButton" onClick={this.startTheClock}>
+          <button
+            id="GameButton"
+            onClick={this.startTheClock}
+            disabled={this.state.letters.length < 9}
+          >
             Start The Clock
           </button>
-          <button id="GameButton" onClick={this.stopTheClock}>
+          <button
+            id="GameButton"
+            onClick={this.stopTheClock}
+            disabled={this.state.clockStart === false}
+          >
             Hide The Clock
           </button>
           <button id="GameButton" onClick={this.resetLettersGame}>

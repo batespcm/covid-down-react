@@ -1,10 +1,24 @@
 import React from 'react';
 import NumbersRoundForm from './NumbersRoundForm';
+import NumbersCountDownClock from './CountDownClock';
 
 class NumbersGame extends React.Component {
   state = {
     numbers: [],
     target: [],
+    clockStart: false,
+  };
+
+  startTheClock = () => {
+    this.setState({
+      clockStart: true,
+    });
+  };
+
+  stopTheClock = () => {
+    this.setState({
+      clockStart: false,
+    });
   };
 
   resetNumbersGame = () => {
@@ -46,54 +60,75 @@ class NumbersGame extends React.Component {
 
   render() {
     return (
-      <main>
-        <button
-          id="GameButton"
-          onClick={this.randomOneToTen}
-          disabled={this.state.numbers.length >= 6}
-        >
-          Small Number
-        </button>
-        <button
-          id="GameButton"
-          onClick={this.bigNumber}
-          disabled={this.state.numbers.length >= 6}
-        >
-          Big Number
-        </button>
-        <button
-          id="GameButton"
-          onClick={this.numbersGoal}
-          disabled={
-            this.state.target.length >= 1 || this.state.numbers.length < 6
+      <React.Fragment>
+        <main>
+          <button
+            id="GameButton"
+            onClick={this.randomOneToTen}
+            disabled={this.state.numbers.length >= 6}
+          >
+            Small Number
+          </button>
+          <button
+            id="GameButton"
+            onClick={this.bigNumber}
+            disabled={this.state.numbers.length >= 6}
+          >
+            Big Number
+          </button>
+          <button
+            id="GameButton"
+            onClick={this.numbersGoal}
+            disabled={
+              this.state.target.length >= 1 || this.state.numbers.length < 6
+            }
+          >
+            Target Number
+          </button>
+          <button
+            id="GameButton"
+            onClick={this.startTheClock}
+            disabled={this.state.target.length < 1}
+          >
+            Start The Clock
+          </button>
+          <button
+            id="GameButton"
+            onClick={this.stopTheClock}
+            disabled={this.state.clockStart === false}
+          >
+            Hide The Clock
+          </button>
+          <button id="GameButton" onClick={this.resetNumbersGame}>
+            Reset Numbers Game
+          </button>
+          {
+            <NumbersRoundForm
+              incrementPlayerScore={this.props.incrementPlayerScore}
+              numbersGoal={this.state.target}
+            />
           }
-        >
-          Target Number
-        </button>
-        <button id="GameButton" onClick={this.resetNumbersGame}>
-          Reset Numbers Game
-        </button>
-        {
-          <NumbersRoundForm
-            incrementPlayerScore={this.props.incrementPlayerScore}
-            numbersGoal={this.state.target}
-          />
-        }
-        <table id="NumbersTarget">
-          <tr>
-            {this.state.target.map((goal) => {
-              return <td>{goal}</td>;
-            })}
-          </tr>
-        </table>
-        <table id="NumbersTable">
-          <tr>
-            {this.state.numbers.map((number) => {
-              return <td>{number}</td>;
-            })}
-          </tr>
-        </table>
-      </main>
+          <table id="NumbersTarget">
+            <tr>
+              {this.state.target.map((goal) => {
+                return <td>{goal}</td>;
+              })}
+            </tr>
+          </table>
+          <table id="NumbersTable">
+            <tr>
+              {this.state.numbers.map((number) => {
+                return <td>{number}</td>;
+              })}
+            </tr>
+          </table>
+        </main>
+        <NumbersCountDownClock
+          letters={this.state.numbers}
+          target={this.state.target}
+          clockStart={this.state.clockStart}
+        />
+      </React.Fragment>
     );
   }
 }
