@@ -15,10 +15,13 @@ class App extends React.Component {
     this.setState({ playerOne: 0, playerTwo: 0 });
   };
 
-  incrementPlayerScore = (player, score) => {
+  incrementPlayerScore = (playerOneScore, playerTwoScore) => {
+    let playerOne = 'playerOne';
+    let playerTwo = 'playerTwo';
     this.setState((currentState) => {
       return {
-        [player]: currentState[player] + score,
+        [playerOne]: currentState[playerOne] + playerOneScore,
+        [playerTwo]: currentState[playerTwo] + playerTwoScore,
       };
     });
   };

@@ -9,18 +9,23 @@ class LettersScoreForm extends React.Component {
 
   handleScoreDistribution = (event) => {
     event.preventDefault();
-    let player;
-    let score;
+    let playerOneScore;
+    let playerTwoScore;
     if (this.state.playerOneWord.length > this.state.playerTwoWord.length) {
-      player = 'playerOne';
-      score = this.state.playerOneWord.length;
+      playerOneScore = this.state.playerOneWord.length;
+      playerTwoScore = 0;
     } else if (
       this.state.playerOneWord.length < this.state.playerTwoWord.length
     ) {
-      player = 'playerTwo';
-      score = this.state.playerTwoWord.length;
+      playerOneScore = 0;
+      playerTwoScore = this.state.playerTwoWord.length;
+    } else if (
+      this.state.playerOneWord.length === this.state.playerTwoWord.length
+    ) {
+      playerOneScore = this.state.playerOneWord.length;
+      playerTwoScore = this.state.playerTwoWord.length;
     }
-    this.props.incrementPlayerScore(player, score);
+    this.props.incrementPlayerScore(playerOneScore, playerTwoScore);
   };
 
   addWordToState = (event) => {
