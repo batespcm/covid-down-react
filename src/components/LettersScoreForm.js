@@ -41,13 +41,15 @@ class LettersScoreForm extends React.Component {
         <input
           name="playerOneWord"
           onChange={this.addWordToState}
-          placeholder="P1 Word"
+          placeholder="P1 Word - 9 Letters Max"
+          maxlength="9"
         />
         <label>P2 Word</label>
         <input
           name="playerTwoWord"
           onChange={this.addWordToState}
-          placeholder="P2 Word"
+          placeholder="P2 Word - 9 Letters Max"
+          maxlength="9"
         />
         <button> Submit Words</button>
       </form>
