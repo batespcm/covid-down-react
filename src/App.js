@@ -1,8 +1,9 @@
 import React from 'react';
+import { Router } from '@reach/router';
 import './App.css';
 import Header from './components/Header';
 import LettersGame from './components/LettersGame';
-// import NumbersGame from './components/NumbersGame';
+import NumbersGame from './components/NumbersGame';
 import Footer from './components/Footer';
 
 class App extends React.Component {
@@ -34,8 +35,15 @@ class App extends React.Component {
           playerOne={this.state.playerOne}
           playerTwo={this.state.playerTwo}
         />
+        <Router>
+          <LettersGame
+            path="/"
+            incrementPlayerScore={this.incrementPlayerScore}
+          />
+          <NumbersGame path="/numbersgame" />
+        </Router>
         {/* {<NumbersGame incrementPlayerScore={this.incrementPlayerScore}} /> */}
-        <LettersGame incrementPlayerScore={this.incrementPlayerScore} />
+
         <Footer />
         {
           //add the first button
