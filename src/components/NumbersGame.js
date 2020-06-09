@@ -62,46 +62,50 @@ class NumbersGame extends React.Component {
     return (
       <React.Fragment>
         <main>
-          <button
-            id="GameButton"
-            onClick={this.randomOneToTen}
-            disabled={this.state.numbers.length >= 6}
-          >
-            Small Number
-          </button>
-          <button
-            id="GameButton"
-            onClick={this.bigNumber}
-            disabled={this.state.numbers.length >= 6}
-          >
-            Big Number
-          </button>
-          <button
-            id="GameButton"
-            onClick={this.numbersGoal}
-            disabled={
-              this.state.target.length >= 1 || this.state.numbers.length < 6
-            }
-          >
-            Target Number
-          </button>
-          <button
-            id="GameButton"
-            onClick={this.startTheClock}
-            disabled={this.state.target.length < 1}
-          >
-            Start The Clock
-          </button>
-          <button
-            id="GameButton"
-            onClick={this.stopTheClock}
-            disabled={this.state.clockStart === false}
-          >
-            Hide The Clock
-          </button>
-          <button id="GameButton" onClick={this.resetNumbersGame}>
-            Reset Numbers Game
-          </button>
+          <tr>
+            <button
+              className="GameButton"
+              onClick={this.randomOneToTen}
+              disabled={this.state.numbers.length >= 6}
+            >
+              Small Number
+            </button>
+            <button
+              className="GameButton"
+              onClick={this.bigNumber}
+              disabled={this.state.numbers.length >= 6}
+            >
+              Big Number
+            </button>
+            <button
+              className="GameButton"
+              onClick={this.numbersGoal}
+              disabled={
+                this.state.target.length >= 1 || this.state.numbers.length < 6
+              }
+            >
+              Target Number
+            </button>
+          </tr>
+          <tr>
+            <button
+              className="GameButton"
+              onClick={this.startTheClock}
+              disabled={this.state.target.length < 1}
+            >
+              Start The Clock
+            </button>
+            <button
+              className="GameButton"
+              onClick={this.stopTheClock}
+              disabled={this.state.clockStart === false}
+            >
+              Hide The Clock
+            </button>
+            <button className="GameButton" onClick={this.resetNumbersGame}>
+              Reset Numbers Game
+            </button>
+          </tr>
           {
             <NumbersRoundForm
               incrementPlayerScore={this.props.incrementPlayerScore}

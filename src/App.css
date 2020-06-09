@@ -6,7 +6,29 @@ body {
   position: relative;
   right: 10%;
   left: 70%;
-  bottom: 140px;
+  bottom: 170px;
+}
+
+.GameButton {
+  font-weight: bold;
+  font-size: 1em;
+  text-align: center;
+  letter-spacing: 0px;
+  margin: 5px;
+  width: 180px;
+  padding-left: 3px;
+  padding-right: 3px;
+}
+
+.GameButtonTwo {
+  font-weight: bold;
+  font-size: 1em;
+  text-align: center;
+  letter-spacing: 0px;
+  margin: 10px;
+  width: 265px;
+  padding-left: 3px;
+  padding-right: 3px;
 }
 
 .footerTable {

@@ -55,37 +55,41 @@ class LettersGame extends React.Component {
     return (
       <React.Fragment>
         <main>
-          <button
-            id="GameButton"
-            onClick={this.getConsonant}
-            disabled={this.state.letters.length >= 9}
-          >
-            Consonant
-          </button>
-          <button
-            id="GameButton"
-            onClick={this.getVowel}
-            disabled={this.state.letters.length >= 9}
-          >
-            Vowel
-          </button>
-          <button
-            id="GameButton"
-            onClick={this.startTheClock}
-            disabled={this.state.letters.length < 9}
-          >
-            Start The Clock
-          </button>
-          <button
-            id="GameButton"
-            onClick={this.stopTheClock}
-            disabled={this.state.clockStart === false}
-          >
-            Hide The Clock
-          </button>
-          <button id="GameButton" onClick={this.resetLettersGame}>
-            Reset Letters Game
-          </button>
+          <tr>
+            <button
+              className="GameButtonTwo"
+              onClick={this.getConsonant}
+              disabled={this.state.letters.length >= 9}
+            >
+              Consonant
+            </button>
+            <button
+              className="GameButtonTwo"
+              onClick={this.getVowel}
+              disabled={this.state.letters.length >= 9}
+            >
+              Vowel
+            </button>
+          </tr>
+          <tr>
+            <button
+              className="GameButton"
+              onClick={this.startTheClock}
+              disabled={this.state.letters.length < 9}
+            >
+              Start The Clock
+            </button>
+            <button
+              className="GameButton"
+              onClick={this.stopTheClock}
+              disabled={this.state.clockStart === false}
+            >
+              Hide The Clock
+            </button>
+            <button className="GameButton" onClick={this.resetLettersGame}>
+              Reset Letters Game
+            </button>
+          </tr>
 
           {
             <LettersScoreForm

@@ -51,7 +51,7 @@ class LettersScoreForm extends React.Component {
           placeholder="P2 Word - 9 Letters Max"
           maxlength="9"
         />
-        <button> Submit Words</button>
+        <button className="GameButton"> Submit Words</button>
       </form>
     );
   }
