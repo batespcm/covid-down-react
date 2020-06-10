@@ -58,7 +58,9 @@ class NumbersRoundForm extends React.Component {
         />
         <button
           className="GameButton"
-          disabled={this.props.numbersGoal.length < 1}
+          disabled={
+            this.state.playerOneTotal < 1 && this.state.playerTwoTotal < 1
+          }
         >
           {' '}
           Submit Total

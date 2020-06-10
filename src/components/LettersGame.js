@@ -94,6 +94,7 @@ class LettersGame extends React.Component {
           {
             <LettersScoreForm
               incrementPlayerScore={this.props.incrementPlayerScore}
+              letters={this.state.letters}
             />
           }
           <table id="LettersTable">
