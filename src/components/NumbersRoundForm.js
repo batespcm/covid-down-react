@@ -4,6 +4,7 @@ class NumbersRoundForm extends React.Component {
   state = {
     playerOneTotal: 0,
     playerTwoTotal: 0,
+    triggerSubmit: false,
   };
 
   handleSubmit = (event) => {
@@ -27,6 +28,12 @@ class NumbersRoundForm extends React.Component {
     } else if (playerTwoTotal - numbersGoal === 0) {
       playerOneScore = 0;
       playerTwoScore = 10;
+    } else if (
+      playerOneTotal - numbersGoal !== 0 &&
+      playerTwoTotal - numbersGoal !== 0
+    ) {
+      playerOneScore = 0;
+      playerTwoScore = 0;
     }
     this.props.incrementPlayerScore(playerOneScore, playerTwoScore);
   };
@@ -59,7 +66,7 @@ class NumbersRoundForm extends React.Component {
         <button
           className="GameButton"
           disabled={
-            this.state.playerOneTotal < 1 && this.state.playerTwoTotal < 1
+            this.state.playerTwoTotal < 1 || this.state.playerOneTotal < 1
           }
         >
           {' '}
