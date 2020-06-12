@@ -2,7 +2,7 @@ import React from 'react';
 
 const NumbersRules = () => {
   return (
-    <ul className="LettersRules">
+    <ul className="NumbersRules">
       <li>Select from Small (1-10) and Big (25,50,75,100) Numbers</li>
       <li>Generate a target</li>
       <li>Start the clock for a 30 second timer</li>

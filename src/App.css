@@ -1,9 +1,14 @@
 body {
   background-color: lightblue;
-  overflow: hidden;
 }
 
 .LettersRules {
+  position: relative;
+  bottom: 370px;
+  color: darkblue;
+  font-weight: bold;
+}
+.NumbersRules {
   position: relative;
   bottom: 370px;
   color: darkblue;
