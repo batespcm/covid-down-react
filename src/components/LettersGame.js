@@ -1,6 +1,8 @@
 import React from 'react';
 import LettersScoreForm from './LettersScoreForm';
 import CountDownClock from './CountDownClock';
+import LettersRules from './LettersRules';
+// import LettersRules from './LettersRules';
 
 class LettersGame extends React.Component {
   state = {
@@ -90,7 +92,6 @@ class LettersGame extends React.Component {
               Reset Letters Game
             </button>
           </tr>
-
           {
             <LettersScoreForm
               incrementPlayerScore={this.props.incrementPlayerScore}
@@ -111,6 +112,7 @@ class LettersGame extends React.Component {
           letters={this.state.letters}
           clockStart={this.state.clockStart}
         />
+        <LettersRules />
       </React.Fragment>
     );
   }

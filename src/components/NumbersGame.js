@@ -1,6 +1,7 @@
 import React from 'react';
 import NumbersRoundForm from './NumbersRoundForm';
 import NumbersCountDownClock from './CountDownClock';
+import NumbersRules from './NumbersRules';
 
 class NumbersGame extends React.Component {
   state = {
@@ -132,6 +133,7 @@ class NumbersGame extends React.Component {
           target={this.state.target}
           clockStart={this.state.clockStart}
         />
+        <NumbersRules />
       </React.Fragment>
     );
   }
