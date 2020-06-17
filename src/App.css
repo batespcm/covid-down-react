@@ -53,7 +53,9 @@ body {
   text-align: center;
   background-color: darkblue;
   position: fixed;
-  right: 12.5%;
+  width: 70%;
+  left: 15%;
+  right: 15%;
   bottom: 0px;
 }
 
@@ -69,16 +71,15 @@ h1 {
   font-family: 'futuracondensed_bold';
   font-weight: bold;
   font-size: 95px;
-  letter-spacing: 0px;
+  letter-spacing: 1px;
   color: white;
   text-align: center;
   background-color: darkblue;
-
   position: fixed;
-  width: 70%;
-  right: 15%;
-  left: 15%;
-  bottom: 100px;
+  width: 75%;
+  right: 12.5%;
+  left: 12.5%;
+  bottom: 110px;
   table-layout: fixed;
 }
 
